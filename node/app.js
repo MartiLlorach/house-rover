@@ -58,6 +58,7 @@ const webSoc = http.createServer(async (req, res) => {
             res.end(fs.readFileSync("./index.html"))
             break
         case "/stream":
+            // TODO: detect when request ends and end response
             res.writeHead(200, {
                 'Content-Type': 'multipart/x-mixed-replace; boundary=--frontera'
             });
